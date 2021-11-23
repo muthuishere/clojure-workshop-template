@@ -1,4 +1,4 @@
-(ns hello_clojure.core)
+(ns clojure-fundamentals.core)
 
 
       ; 1 => Right Click 
@@ -15,5 +15,3 @@
 "Hello Clojure"
 
 (+ 2 3)
-
-
