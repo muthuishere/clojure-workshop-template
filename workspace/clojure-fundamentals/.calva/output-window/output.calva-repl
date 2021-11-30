@@ -5,7 +5,7 @@
 ; Happy coding! ♥️
 
 ; Jacking in...
-; Starting Jack-in Terminal: cmd.exe /d /c lein update-in :dependencies conj [nrepl,"0.8.3"] -- update-in :plugins conj [cider/cider-nrepl,"0.26.0"] -- update-in [:repl-options,:nrepl-middleware] conj '["cider.nrepl/cider-middleware"]' -- repl :headless
+; Starting Jack-in Terminal: lein update-in :dependencies conj '[nrepl,"0.8.3"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.26.0"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- repl :headless
 ; Hooking up nREPL sessions...
 ; Connected session: clj
 ; TIPS: 
@@ -17,10 +17,4 @@
 ;   - Clojure lines in stack traces are peekable and clickable.
 clj꞉clojure-fundamentals.core꞉>  ; Use `alt+enter` to evaluate
 ; Jack-in done.
-clj꞉clojure-fundamentals.core꞉> 
-5
-clj꞉clojure-fundamentals.core꞉> 
-"Hello Clojure"
-clj꞉clojure-fundamentals.core꞉> 
-5
 clj꞉clojure-fundamentals.core꞉> 
