@@ -1,4 +1,6 @@
 (ns real-clojure.core
+
+  (:require  [real-clojure.dates :as dates])
 (:gen-class)
   )
 
@@ -8,19 +10,17 @@
   (println x "Hello, World!"))
 
 
-(defn -main [name age]
+(defn -main [month]
   
   ;Home Assignment
   ;COnvert String to Integer
-
-
 
   ; Accept a parameter called month and print its abbrevation
 
   ;lein run 2  => Feb
   ;lein run 4  => Apr
-  (println "Type of name" (type name))
-  (println "Type of age" (type age))
 
-  (println "Hello " name age)
+  (println "Month number to value " (dates/number-to-three-character-month month))
+
+  
   )

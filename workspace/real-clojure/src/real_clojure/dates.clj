@@ -12,4 +12,13 @@
   )
 
 
+;(number-to-three-character-month 2)
 
+
+(defn add [ a b]
+
+  (+ a b)
+  
+  )
+
+;(add 2 3)
