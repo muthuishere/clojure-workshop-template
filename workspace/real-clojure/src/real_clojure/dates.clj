@@ -68,6 +68,20 @@
 
   ; drop-while , if the string contains Man
 ;  Result("Captain America")
+    
+  (first (take 4 (range 3 23))) 
+
+
+ (rest (take 4 (range 3 23)))
+
+(cons 81 (take 4 (range 3 23)))
+
+(conj (take 4 (range 3 23)) 81)
+
+
+
+
+
 
 
 

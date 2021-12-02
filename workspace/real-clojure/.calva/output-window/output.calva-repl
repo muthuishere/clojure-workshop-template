@@ -18,45 +18,55 @@
 clj꞉real-clojure.core꞉>  ; Use `alt+enter` to evaluate
 ; Jack-in done.
 clj꞉real-clojure.core꞉> 
-#'real-clojure.dates/add
+; Syntax error compiling at (src/real_clojure/dates.clj:73:2).
+; Unable to resolve symbol: contains in this context
 clj꞉real-clojure.dates꞉> 
-5
+true
 clj꞉real-clojure.dates꞉> 
-5
+false
 clj꞉real-clojure.dates꞉> 
-#'real-clojure.dates/add
+("Captain America")
 clj꞉real-clojure.dates꞉> 
-89
-clj꞉real-clojure.dates꞉> (number-to-three-character-month 3)
-; Syntax error compiling at (.calva/output-window/output.calva-repl:30:26).
-; Unable to resolve symbol: number-to-three-character-month in this context
+clojure.lang.LazySeq
 clj꞉real-clojure.dates꞉> 
-; Evaluating file: dates.clj
-5
+0
 clj꞉real-clojure.dates꞉> 
-"Feb"
-clj꞉real-clojure.dates꞉> (number-to-three-character-month 2)
-"Feb"
+2
 clj꞉real-clojure.dates꞉> 
-"Feb"
-clj꞉real-clojure.dates꞉> (range 5)
-(0 1 2 3 4)
-clj꞉real-clojure.dates꞉> (range 2 5 )
-(2 3 4)
-clj꞉real-clojure.dates꞉> (range 2 1)
-()
+(3)
 clj꞉real-clojure.dates꞉> 
+; Execution error (ArityException) at real-clojure.dates/eval7492 (form-init13533532364039533746.clj:80).
+; Wrong number of args (1) passed to: clojure.core/cons--5393
 clj꞉real-clojure.dates꞉> 
-
+; Execution error (IllegalArgumentException) at real-clojure.dates/eval7494 (form-init13533532364039533746.clj:80).
+; Don't know how to create ISeq from: java.lang.Long
 clj꞉real-clojure.dates꞉> 
-()
+(5 2 3 4 5)
 clj꞉real-clojure.dates꞉> 
-(200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 240 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255 256 257 258 259 260 261 262 263 264 265 266 267 268 269 270 271 272 273 274 275 276 277 278 279 280 281 282 283 284 285 286 287 288 289 290 291 292 293 294 295 296 297 298 299)
+clojure.lang.LongRange
 clj꞉real-clojure.dates꞉> 
-(21)
+; Execution error (ClassCastException) at real-clojure.dates/eval7500 (form-init13533532364039533746.clj:77).
+; class java.lang.Long cannot be cast to class clojure.lang.IPersistentCollection (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IPersistentCollection is in unnamed module of loader 'app')
 clj꞉real-clojure.dates꞉> 
-(5 6 7 8 9)
+(5 2 3 4 5)
 clj꞉real-clojure.dates꞉> 
-; Evaluating file: dates.clj
-(5 6 7 8 9)
+(51 2 3 4 5)
+clj꞉real-clojure.dates꞉> 
+(0 1 2 3)
+clj꞉real-clojure.dates꞉> 
+clojure.lang.LazySeq
+clj꞉real-clojure.dates꞉> 
+0
+clj꞉real-clojure.dates꞉> 
+3
+clj꞉real-clojure.dates꞉> 
+(4 5 6)
+clj꞉real-clojure.dates꞉> 
+clojure.lang.LazySeq
+clj꞉real-clojure.dates꞉> 
+(81 3 4 5 6)
+clj꞉real-clojure.dates꞉> 
+(23 3 4 5 6)
+clj꞉real-clojure.dates꞉> 
+(81 3 4 5 6)
 clj꞉real-clojure.dates꞉> 
