@@ -33,13 +33,6 @@
   (* value 16)
   )
 
-(for [x(range 1 21)
-      :let [y (product-of-16 x)]
-      ]
-
-  y
-
-  )
 
 
 ;DoSeq
