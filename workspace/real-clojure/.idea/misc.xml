@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="LeiningenProjectsManager">
+    <option name="projectFiles">
+      <set>
+        <option value="file://$PROJECT_DIR$/project.clj" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="11" project-jdk-type="JavaSDK" />
+  <component name="SbtLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$USER_HOME$/Downloads/play-samples-play-scala-slick-example/play-samples-play-scala-slick-example" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../../../../ease-business-workspace/excel-to-webapp-generator" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../../../scala-play/code/akka/akka-quickstart-scala" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../../../scala-play/code/akka/hello-akka" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../../../scala-play/code/play/vehicle-list" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../../../scala-play/code/scala/calculator" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="ScalaSbtSettings">
+    <option name="customLauncherEnabled" value="true" />
+    <option name="customLauncherPath" value="C:\muthu\sbt\bin\sbt-launch.jar" />
+    <option name="customVMEnabled" value="true" />
+    <option name="customVMPath" value="$PROJECT_DIR$/../../../../../../../../../Program Files/Java/jdk1.8.0_144" />
+  </component>
+</project>

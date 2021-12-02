@@ -29,6 +29,29 @@
 
 ;Output should be
 ; (16 32 48 64 80 96 112 128 144 160 176 192 208 224 240 256 272 288 304 320)
+(defn product-of-16 [value]
+  (* value 16)
+  )
+
+(for [x(range 1 21)
+      :let [y (product-of-16 x)]
+      ]
+
+  y
+
+  )
+
+
+;DoSeq
+(doseq [x (range 1 21)]
+  (println (str x " x 16 =" (* 16 x) ))
+  (* 16 x)
+  )
+
+
+
+
+
 
 
 
