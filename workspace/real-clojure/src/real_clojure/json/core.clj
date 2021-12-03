@@ -121,16 +121,18 @@
   )
 
 
+(defn convert-dob-from-string-to-localdate [k v ]
 
+  (if (= :date_of_birth k)
+    (string-to-date v)
+    v
+    )
+  )
 
 ;users.json
 (json/read-str (slurp "users.json")
                :key-fn keyword
-               :value-fn (fn [k v]
-
-                           ; To Complete the code
-                           ; Make  :date_of_birth value to be localDate
-                           )
+               :value-fn convert-dob-from-string-to-localdate
                )
 
 
