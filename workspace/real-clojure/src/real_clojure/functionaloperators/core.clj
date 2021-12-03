@@ -22,4 +22,50 @@
   (map  #(:imageUrl %) products)
 
   )
-(find-all-image-urls)
+
+
+
+(comment
+
+  ; a simple function to flatten out merged arrays
+  (flatten [[ 1 2 3] [7 8] ] )
+
+  )
+(defn find-all-reviews []
+  ;Get all the reviews
+
+
+  ;(flatten (map #(:reviews %) products))
+  ;->> is a threaded macro which will place the result as the last argum,ent for a consequent function
+
+  (->> products
+       (map #(:reviews %) )
+       (flatten)
+       )
+
+
+  )
+
+
+(defn find-products-of-clothing-category []
+
+  ;(filter (fn [input]
+  ;           (= "Clothing"  (get input :category))
+  ;          )
+  ;        products
+  ;        )
+  (filter #(= "Clothing"  (% :category)) products )
+
+
+  )
+ (find-products-of-clothing-category)
+;(count (find-products-of-clothing-category))
+
+; Exercise
+
+(defn find-categories-of [category]
+  ;return products only of that category
+  )
+
+
+
