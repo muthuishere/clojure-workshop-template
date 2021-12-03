@@ -1,5 +1,9 @@
 (ns real-clojure.json.core
   (:require [clojure.data.json :as json])
+
+  (:import (java.time LocalDate)
+           (java.time.format DateTimeFormatter)
+           )
   )
 
 
@@ -43,6 +47,8 @@
 
 
 
+
+
 (json/read-str (slurp "spiderman.json")
                :key-fn (fn [key]
                          (print key)
@@ -54,13 +60,79 @@
 
 
 
-{:name "Peter  Parker"
- :alias "Spider Man"
- :mentor {
+;Exercise Modify the function so that, it will return like below
+;{:name "Peter  Parker"
+; :alias "Spider Man"
+; :mentor {
+;
+;          :name "Tony Stark"
+;          :alias "Iron Man"
+;          }
+; }
 
-          :name "Tony Stark"
-          :alias "Iron Man"
-          }
- }
+
+
+(json/read-str (slurp "spiderman.json")
+               :key-fn (fn [key]
+                         (keyword  key)
+                         )
+               )
+
+(json/read-str (slurp "spiderman.json")
+               :key-fn #(keyword  %))
+
+(json/read-str (slurp "spiderman.json")
+               :key-fn keyword)
+
+;Exercise REad Users.json
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(defn string-to-date [input]
+  (let [ pattern (DateTimeFormatter/ofPattern "yyyy-MM-dd")]
+    (LocalDate/parse input pattern)
+    )
+  )
+
+
+(comment
+
+  (def input "1994-06-28" )
+
+  (string-to-date input)
+
+
+  )
+
+
+
+
+;users.json
+(json/read-str (slurp "users.json")
+               :key-fn keyword
+               :value-fn (fn [k v]
+
+                           ; To Complete the code
+                           ; Make  :date_of_birth value to be localDate
+                           )
+               )
+
+
 
 
