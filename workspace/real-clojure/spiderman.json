@@ -1,8 +1,1 @@
-{
-  "name": "Peter Parker",
-  "alias": "Spider Man",
-  "mentor": {
-    "name": "Tony Stark",
-    "alias": "Iron Man"
-  }
-}
+{"name":"Peter  Parker","alias":"Spider Man","mentor":{"name":"Tony Stark","alias":"Iron Man"}}

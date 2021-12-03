@@ -18,55 +18,14 @@
 clj꞉real-clojure.core꞉>  ; Use `alt+enter` to evaluate
 ; Jack-in done.
 clj꞉real-clojure.core꞉> 
-; Syntax error compiling at (src/real_clojure/dates.clj:73:2).
-; Unable to resolve symbol: contains in this context
-clj꞉real-clojure.dates꞉> 
-true
-clj꞉real-clojure.dates꞉> 
-false
-clj꞉real-clojure.dates꞉> 
-("Captain America")
-clj꞉real-clojure.dates꞉> 
-clojure.lang.LazySeq
-clj꞉real-clojure.dates꞉> 
-0
-clj꞉real-clojure.dates꞉> 
-2
-clj꞉real-clojure.dates꞉> 
-(3)
-clj꞉real-clojure.dates꞉> 
-; Execution error (ArityException) at real-clojure.dates/eval7492 (form-init13533532364039533746.clj:80).
-; Wrong number of args (1) passed to: clojure.core/cons--5393
-clj꞉real-clojure.dates꞉> 
-; Execution error (IllegalArgumentException) at real-clojure.dates/eval7494 (form-init13533532364039533746.clj:80).
-; Don't know how to create ISeq from: java.lang.Long
-clj꞉real-clojure.dates꞉> 
-(5 2 3 4 5)
-clj꞉real-clojure.dates꞉> 
-clojure.lang.LongRange
-clj꞉real-clojure.dates꞉> 
-; Execution error (ClassCastException) at real-clojure.dates/eval7500 (form-init13533532364039533746.clj:77).
-; class java.lang.Long cannot be cast to class clojure.lang.IPersistentCollection (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IPersistentCollection is in unnamed module of loader 'app')
-clj꞉real-clojure.dates꞉> 
-(5 2 3 4 5)
-clj꞉real-clojure.dates꞉> 
-(51 2 3 4 5)
-clj꞉real-clojure.dates꞉> 
-(0 1 2 3)
-clj꞉real-clojure.dates꞉> 
-clojure.lang.LazySeq
-clj꞉real-clojure.dates꞉> 
-0
-clj꞉real-clojure.dates꞉> 
-3
-clj꞉real-clojure.dates꞉> 
-(4 5 6)
-clj꞉real-clojure.dates꞉> 
-clojure.lang.LazySeq
-clj꞉real-clojure.dates꞉> 
-(81 3 4 5 6)
-clj꞉real-clojure.dates꞉> 
-(23 3 4 5 6)
-clj꞉real-clojure.dates꞉> 
-(81 3 4 5 6)
-clj꞉real-clojure.dates꞉> 
+namealiasmentornamealias
+{:name "Peter  Parker", :alias "Spider Man", :mentor {:name "Tony Stark", :alias "Iron Man"}}
+clj꞉real-clojure.json.core꞉> 
+namealiasmentornamealias
+{:name "Peter  Parker", :alias "Spider Man", :mentor {:name "Tony Stark", :alias "Iron Man"}}
+clj꞉real-clojure.json.core꞉> 
+{:name "Peter  Parker", :alias "Spider Man", :mentor {:name "Tony Stark", :alias "Iron Man"}}
+clj꞉real-clojure.json.core꞉> 
+namealiasmentornamealias
+{nil {nil "Iron Man"}}
+clj꞉real-clojure.json.core꞉> 
