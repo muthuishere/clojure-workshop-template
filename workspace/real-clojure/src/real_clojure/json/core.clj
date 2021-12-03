@@ -52,7 +52,7 @@
 (json/read-str (slurp "spiderman.json")
                :key-fn (fn [key]
                          (print key)
-                         (str "super-hero-" key)
+                        ;; (keyword key)
                          )
                )
 
