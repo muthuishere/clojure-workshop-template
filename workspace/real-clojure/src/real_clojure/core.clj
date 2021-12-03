@@ -1,7 +1,11 @@
 (ns real-clojure.core
+  (:require
+      [real-clojure.dates :as dates]
+      [real-clojure.iterate.core :as iterate]
+      [real-clojure.json.core :as json]
 
-  (:require  [real-clojure.dates :as dates])
-(:gen-class)
+      )
+  (:gen-class)
   )
 
 (defn foo
