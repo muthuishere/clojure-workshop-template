@@ -132,11 +132,46 @@
   )
  (defn find-all-categories []
 
-      (distinct (map #(get % :category) products))
+   (->> products
+        (map #(get % :category) )
+        (distinct )
+        )
+
    )
-(find-all-categories)
+
+(defn find-all-user-emails []
+
+  ;(let
+  ;
+  ;  [ reviews (flatten  (map #(get % :reviews) products))]
+  ;
+  ;
+  ; (distinct  (map #(get-in % [:user :email]) reviews))
+  ;
+  ;  )
+
+  (->> products
+       (map #(get % :reviews))
+       (flatten)
+       (map #(get-in % [:user :email]))
+       (distinct)
+       )
+
+
+  )
+(count (find-all-user-emails))
+
+;Exercise
+;Count Number of Male Users Who Left reviews for Footwear Product
+(defn count-of-male-users-who-left-reviews-for-Footwear []
+
+
+  )
+
+
+
 ;
-;find-all-user-emails
+;
 ;find-all-city-and-users
 ;find-product-with-highest-number-of-reviews
 ;product-with-most-valuable-deal
