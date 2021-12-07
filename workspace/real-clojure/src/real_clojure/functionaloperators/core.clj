@@ -117,20 +117,25 @@
 (defn all-manufacturer-names-as-string []
 
   ;
-  ;(->> (find-all-category "Footwear")
-  ;     (reduce  #(+ %1 (get %2 :price))  0  )
-  ;     )
-
-
-
-
+  (->> products
+       (reduce  #(str %1 (get %2 :manufacturer))  ""  )
+       )
   )
 
+;(all-manufacturer-names-as-string)
+
 ;TODO
+(comment
 
+  (distinct [ 2 3 4 2])
 
+  )
+ (defn find-all-categories []
 
-;find-all-categories
+      (distinct (map #(get % :category) products))
+   )
+(find-all-categories)
+;
 ;find-all-user-emails
 ;find-all-city-and-users
 ;find-product-with-highest-number-of-reviews
