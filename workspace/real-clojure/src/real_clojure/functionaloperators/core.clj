@@ -38,6 +38,7 @@
   ;(flatten (map #(:reviews %) products))
   ;->> is a threaded macro which will place the result as the last argum,ent for a consequent function
 
+  ;Thread Last It will place all the arguments at end
   (->> products
        (map #(:reviews %) )
        (flatten)
@@ -63,9 +64,78 @@
 
 ; Exercise
 
-(defn find-categories-of [category]
-  ;return products only of that category
+
+
+
+(defn find-all-category [category]
+
+  (->> products
+       (filter #(= category (% :category)))
+       )
+
+
   )
 
+
+(comment
+
+  ;
+  ;(reduce (fn [a,c]
+  ;          (+ a c)
+  ;          ) [2 5 6] )
+  ;
+  ;(defn add [a b]
+  ;  (+ a b)
+  ;  )
+  (reduce + [2 5 6] )
+
+  ;With Initial Value 10
+  (reduce + 10 [2 5 6] )
+
+
+
+
+
+  )
+;(find-all-category "Footwear")
+
+(defn find-total-cost-of-footwear []
+
+
+  (->> (find-all-category "Footwear")
+       (reduce  #(+ %1 (get %2 :price))  0  )
+       )
+
+
+
+
+  )
+;(find-total-cost-of-footwear)
+
+; Concatenate All Manufacturer Names
+;Exercise
+(defn all-manufacturer-names-as-string []
+
+  ;
+  ;(->> (find-all-category "Footwear")
+  ;     (reduce  #(+ %1 (get %2 :price))  0  )
+  ;     )
+
+
+
+
+  )
+
+;TODO
+
+
+
+;find-all-categories
+;find-all-user-emails
+;find-all-city-and-users
+;find-product-with-highest-number-of-reviews
+;product-with-most-valuable-deal
+;country-with-users-count
+;manufacturer-and-product-count
 
 
