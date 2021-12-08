@@ -165,10 +165,100 @@
 ;Count Number of Male Users Who Left reviews for Footwear Product
 (defn count-of-male-users-who-left-reviews-for-Footwear []
 
+(->> products
+     (filter #( = "Footwear" (get % :category)))
+     (map #(get % :reviews))
+     (flatten)
+     (map  :user)
+     (filter #( = "male" (get % :gender)))
+     (count)
+     )
+  ;products
+  ;filter for footwear
+  ;reviews
+  ;flatten
+  ;user
+  ;filter for male user
+
 
   )
 
+(count-of-male-users-who-left-reviews-for-Footwear)
+(comment
 
+
+
+  (group-by #(get % :category) [
+              {:category "a" :count 5}
+              {:category "a" :count 8}
+              {:category "b" :count 3}
+
+              ])
+  (group-by #(keyword (get % :category))  [
+              {:category "a" :count 5}
+              {:category "a" :count 8}
+              {:category "b" :count 3}
+
+              ])
+
+  ;Another way
+  (group-by  :category [
+              {:category "a" :count 5}
+              {:category "a" :count 8}
+              {:category "b" :count 3}
+
+              ])
+
+
+  ;reduce   ;iterate a collection
+
+  ;reduce-kv - Iterating & aggregation over a hash map
+
+  (reduce-kv (fn [acc key value]
+
+               (+ acc value )
+
+               ) 0  {:a 1 :b 2 :c 3})
+
+
+
+
+  (merge {:a 1} {:b 2 :a 5})
+
+  (conj {:a 1} {:b 2 :a 5})
+
+
+  (assoc {:a 1 } :b 2 )
+
+
+
+
+
+
+  )
+(defn find-all-city-and-users []
+
+  ;city [User1 User2]
+
+  (->> products
+       (map  :reviews )
+       (flatten)
+       (map  :user)
+       (group-by :city)
+       (reduce-kv (fn [a city users]
+                    (assoc a  (keyword city) (count users))
+                  )
+                  {} )
+       )
+
+
+
+  )
+
+;{:Muzzafarabad 2 :Raymond 3}
+;(find-all-city-and-users)
+
+;groupByOverAllRatingAndCount
 
 ;
 ;
