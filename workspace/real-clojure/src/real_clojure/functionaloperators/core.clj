@@ -254,18 +254,78 @@
 
 
   )
+(defn find-all-overallrating-count []
+  (->> products
+       (group-by :overAllRating)
+       (reduce-kv (fn [a k v]
+                    (assoc a k  (count v) )
+                    )
+                  {})
+       )
+  )
+(find-all-overallrating-count)
+
+
+(defn find-manufacturer-and-product-count []
+  (->> products
+       (group-by  :manufacturer)
+       (reduce-kv (fn [a k v]
+                    (assoc a (keyword k) (count v) )
+                    )
+                  {}
+                  ))
+  )
+
+(defn find-country-with-users-count []
+  (->> products
+       (map :reviews)
+       (flatten)
+       (map :user)
+       (group-by :country)
+       (reduce-kv (fn [a country user]
+                    (assoc a (keyword country) (count user))
+                    )
+                  {}
+                  )
+       )
+  )
+
+(defn compare-products-based-on-review-count [product-x product-y]
+  (let  [
+         accumulator-review-count (count  (get product-x :reviews))
+         current-review-count (count  (get product-y :reviews))
+         ]
+
+    (if ( > accumulator-review-count current-review-count)
+      product-x
+      product-y
+      )
+    )
+
+  )
+(defn find-product-with-highest-number-of-reviews []
+
+  (->> products
+       (reduce compare-products-based-on-review-count )
+       )
+  )
+
+(find-product-with-highest-number-of-reviews)
+
+
+
+;;country-with-users-count
+
+
 
 ;{:Muzzafarabad 2 :Raymond 3}
 ;(find-all-city-and-users)
 
-;groupByOverAllRatingAndCount
+; Home Assignments
 
 ;
-;
-;find-all-city-and-users
-;find-product-with-highest-number-of-reviews
 ;product-with-most-valuable-deal
-;country-with-users-count
-;manufacturer-and-product-count
+
+
 
 
