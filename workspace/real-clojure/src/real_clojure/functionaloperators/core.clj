@@ -326,6 +326,13 @@
 ;
 ;product-with-most-valuable-deal
 
+(defn product-names-with-rating-greater-than [num]
 
 
+  )
 
+;product-names-with-overallrating-greater-than-number
+;Convert that into channel
+  ;it will accept a number
+  ;
+  ;

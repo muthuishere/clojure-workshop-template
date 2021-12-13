@@ -20,31 +20,47 @@
 
 
 (def sum-of-numbers-channel (chan))
-(def sum-of-numbers-result-channel (chan))
+;(def sum-of-numbers-result-channel (chan))
 
 
 (go-loop [value (<! sum-of-numbers-channel)]
 
     (when   value
-      ;(println "Sum of Numbers is" (sum-of-numbers-loop value))
-      (>!! sum-of-numbers-result-channel {:input value :result  (sum-of-numbers-loop value) :processed (.getName (Thread/currentThread)) })
+      (let [
+             {:keys [callback-channel number] } value
+
+            ]
+        (>!! callback-channel
+             {:input number :result  (sum-of-numbers-loop number) :processed (.getName (Thread/currentThread)) })
+
+        )
+
+
 
       (recur (<! sum-of-numbers-channel))
       )
     )
 
 
+(defn sum-of-numbers-with-concurrency [num]
+
+  (let [
+        input {:number num :callback-channel (chan)}
+        ]
+    (>!! sum-of-numbers-channel input)
+    (get   (<!! (get input :callback-channel)) :result)
+    )
+
+  )
 
 (comment
 
   (println "Called from" (.getName (Thread/currentThread)))
 
-  (>!! sum-of-numbers-channel 10)
-  (>!! sum-of-numbers-channel 100)
-  ; recive the value
-  (<!! sum-of-numbers-result-channel)
-
-  (>!! sum-of-numbers-channel 100)
-  (<!! sum-of-numbers-result-channel)
+  ;(def input {:number 10 :callback-channel (chan)})
+  ;(>!! sum-of-numbers-channel input)
+  ;
+  ;(<!! (get input :callback-channel))
+  (sum-of-numbers-with-concurrency 10)
 
   )
