@@ -54,9 +54,11 @@
 (def echo-channel (chan))
 
 (go
-    (println "Changed" (<! echo-channel))
-
+  (let [value (<! echo-channel)]
+    (println "Changed" value)
     )
+
+  )
 
 
 ;Put Value in Channel
@@ -69,12 +71,15 @@
 (comment
 
   ;(>!! echo-channel "Hello Concurrency")
-
+  ;
   ;(go
   ;  (>! echo-channel "Hello Concurrency go block")
   ;  )
 
   (>!! echo-channel "Hello Message 1")
+
+
+
 
   ; Exercise , What will happen???
   (>!! echo-channel "Hello Message 2")
