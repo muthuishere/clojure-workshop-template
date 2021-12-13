@@ -1,5 +1,12 @@
 (ns real-clojure.functionaloperators.core
-  (:require [clojure.data.json :as json])
+  (:require
+    [clojure.data.json :as json]
+    [clojure.core.async :refer
+
+     [chan  <! <!! >!  >!! thread go close! go-loop]
+     ]
+
+    )
   )
 ;
 (def products  (json/read-str (slurp "products.json") :key-fn keyword))
@@ -328,6 +335,44 @@
 
 (defn product-names-with-rating-greater-than [num]
 
+  (->> products
+       (filter #(>= num (get % :overAllRating)))
+       (map :name)
+
+       )
+
+  )
+(def product-names-with-rating-greater-than-channel (chan))
+
+(go-loop [value (<! product-names-with-rating-greater-than-channel)]
+
+  (when   value
+    (let [
+          {:keys [callback-channel number] } value
+
+          ]
+      (>!! callback-channel
+           {:input number :result  (product-names-with-rating-greater-than number) :processed (.getName (Thread/currentThread)) })
+
+      )
+
+
+
+    (recur (<! product-names-with-rating-greater-than-channel))
+    )
+  )
+(defn product-names-with-rating-greater-than-through-channel [num]
+
+  (let [
+        input {:number num :callback-channel (chan)}
+        ]
+    (>!! product-names-with-rating-greater-than-channel input)
+    (get   (<!! (get input :callback-channel)) :result)
+    )
+  )
+(comment
+
+  (product-names-with-rating-greater-than-through-channel 3)
 
   )
 
