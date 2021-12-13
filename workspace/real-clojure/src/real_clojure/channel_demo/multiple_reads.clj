@@ -26,15 +26,20 @@
 
   (loop [value (<! echo-channel)]
 
-    (println "Changed" value)
-    (recur (<! echo-channel))
+    (when   value
+      (println "Changed" value)
+      (recur (<! echo-channel))
+      )
     )
+  (println "channel Closed")
+
 
 
 
   )
 
 (comment
+
 
   (>!! echo-channel "Hello Message 1")
 

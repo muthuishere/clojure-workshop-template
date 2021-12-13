@@ -1,7 +1,7 @@
 (ns real-clojure.channel-demo.core
   (:require [clojure.core.async :refer
 
-             [chan  <! <!! >!  >!! thread go ]
+             [chan  <! <!! >!  >!! thread go put! take!]
              ])
   )
 
@@ -55,6 +55,8 @@
 
 (go
   (let [value (<! echo-channel)]
+
+
     (println "Changed" value)
     )
 
