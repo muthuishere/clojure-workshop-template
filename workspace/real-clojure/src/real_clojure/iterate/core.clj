@@ -42,22 +42,22 @@
   )
 
 
-
-(defn is-prime
-  ([n] (if (< n 2) false (is-prime 2 n)))
-  ([input number]
-   (loop [i input n number]
-     (if (= i n)
-       true
-       (if (number-divisable-by? n i)
-         false
-         (recur (inc i) n)
-         )
-       )
-     )
-
-   )
-  )
+;
+;(defn is-prime
+;  ([n] (if (< n 2) false (is-prime 2 n)))
+;  ([input number]
+;   (loop [i input n number]
+;     (if (= i n)
+;       true
+;       (if (number-divisable-by? n i)
+;         false
+;         (recur (inc i) n)
+;         )
+;       )
+;     )
+;
+;   )
+;  )
 
 
 
