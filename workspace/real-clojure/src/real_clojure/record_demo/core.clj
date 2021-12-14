@@ -46,8 +46,21 @@
   ;
   ;Use Atom,  which can update portrayed by Tom Holland
 
-  (def spider-man (SuperHero. "Peter Parker" "Toby Macguire" "Spider Man" ["web shooters"]))
+  (def spider-man (atom (SuperHero. "Peter Parker" "Toby Macguire" "Spider Man" ["web shooters"])) )
 
+  ;update spider-man portrayed-by to Tom Holland
+
+  (swap! spider-man (fn [v]
+                  (assoc v :portrayed-by "Tom Holland"))
+         )
+
+
+  (swap! spider-man   #(assoc % :portrayed-by "Tom Holland 4") )
+
+
+  ; Without Anonymous , pass the function as it is
+  ; the first parameter will be the one the value is set automatically
+  (swap! spider-man  assoc :portrayed-by "Tom Holland 4" )
 
 
 
